@@ -1,0 +1,361 @@
+:root {
+  --primary-color: #2a2a2a;
+  --accent-color: #ca3030;
+  --light-bg: #f8f9fa;
+  --text-color: #333;
+  --white: #ffffff;
+  --font-primary: "DM Serif Text", serif;
+  --font-secondary: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-secondary);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: var(--primary-color);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Hamburger Menu */
+.hamburger-checkbox {
+  display: none;
+}
+
+.hamburger-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--primary-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .hamburger-checkbox:checked ~ .nav-links {
+    display: flex;
+  }
+}
+
+.hero-section {
+  background: linear-gradient(
+    360deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
+  color: var(--white);
+  padding: 9rem 3rem 2rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-button {
+  padding: 0.8rem 2rem;
+  background: var(--accent-color);
+  color: var(--white);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  border: 2px solid var(--white);
+}
+
+.cta-button:hover {
+  background: var(--primary-color);
+}
+
+.about-section {
+  padding: 6rem 1rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.about-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-section {
+  padding: 6rem 1rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.contact-content a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.contact-content a:hover {
+  color: var(--primary-color);
+}
+
+.projects-section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px var(--primary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px var(--primary-color);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.project-link {
+  display: block;
+  padding: 0.8rem;
+  background: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  transition: background 0.3s ease;
+}
+
+.project-link:hover {
+  background: var(--accent-color);
+}
+
+.project-link.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal:target {
+  display: block;
+}
+
+.modal-content {
+  background-color: var(--white);
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.close-modal:hover {
+  color: var(--accent-color);
+}
+
+.modal-link {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0, 5rem 1rem;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 3px;
+  text-align: center;
+  transition: bakcground 0.3s ease;
+}
+
+.modal-link:hover {
+  background: var(--accent-color);
+}
+
+.read-more-button {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background: var(--light-bg);
+  color: var(--text-color);
+  border-radius: 200px;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
+  border: 2px solid var(--primary-color);
+}
+
+.read-more-button:hover {
+  background: var(--accent-color);
+  color: var(--white);
+  transform: translateY(-5px);
+}
+
+
+footer {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
