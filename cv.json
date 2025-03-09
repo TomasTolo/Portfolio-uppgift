@@ -1,0 +1,29 @@
+{
+  "namn": "Tomas Tolo",
+  "email": "tolotomas04@outlook.com",
+  "utbildningar": [
+      {
+          "skola": "Grillska Gymnasiet",
+          "program": "Nätverk och Programmering",
+          "period": "2020-2023",
+          "beskrivning": "Gymnasieutbildning med fokus på webbutveckling"
+
+    
+      },
+
+      {
+            "skola": "British Junior",
+            "program": "grundskola-Engelska",
+            "period": "2011-2020",
+            "beskrivning": "grundskola"
+      }
+  ],
+  "arbetsplatser": [
+      {
+          "företag": "qlosr",
+          "position": "Praktikant",
+          "period": "2022-2023",
+          "beskrivning": "Utveckling av frontend-lösningar"
+      }
+  ]
+}

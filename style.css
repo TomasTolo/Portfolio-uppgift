@@ -15,6 +15,13 @@ body {
   background-color: var(--light-bg);
   color: var(--text-color);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
 }
 
 h1,
@@ -57,7 +64,6 @@ header {
   color: var(--accent-color);
 }
 
-/* Hamburger Menu */
 .hamburger-checkbox {
   display: none;
 }
@@ -92,6 +98,12 @@ header {
   }
 }
 
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero-section {
   background: linear-gradient(
     360deg,
@@ -99,7 +111,7 @@ header {
     var(--accent-color)
   );
   color: var(--white);
-  padding: 9rem 3rem 2rem;
+  padding: 9rem 3rem 3rem;
   text-align: center;
 }
 
@@ -110,30 +122,33 @@ header {
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+.cta-button {
+  background: var(--accent-color);
+  background: transparent; 
 }
 
 .cta-button {
   padding: 0.8rem 2rem;
-  background: var(--accent-color);
-  color: var(--white);
+  background: var(--accent-color); 
+  color: var(--primary-color);
+  border: none;
   border-radius: 5px;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block; 
+  margin: 0 auto; 
+  cursor: pointer;
 }
 
-.cta-button.secondary {
-  background: transparent;
-  border: 2px solid var(--white);
-}
+
 
 .cta-button:hover {
   background: var(--primary-color);
+  transform: translateY(-5px); 
+  color: var(--white)
+ 
 }
 
 .about-section {
@@ -358,4 +373,126 @@ footer {
 footer p {
   margin: 0;
   font-size: 0.9rem;
+}
+
+#cv-content {
+  background: white;
+  padding: 30px;
+  width: 210mm; 
+  min-height: 297mm; 
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: none; 
+}
+
+.utbildning, .jobb {
+  margin: 20px 0;
+  padding: 15px;
+  border-left: 4px solid #ca3030;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #2a2a2a;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ca3030;
+  border-bottom: 2px solid #2a2a2a;
+  padding-bottom: 5px;
+}
+
+.contact {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.program, .position {
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+.period {
+  font-style: italic;
+  color: #666;
+}
+
+.beskrivning {
+  margin-top: 10px;
+  color: #444;
+}
+
+body.dark-mode {
+  --primary-color: #1a1a1a;
+  
+  --light-bg: #121212;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+}
+
+
+.dark-mode .project-card {
+  background: gray;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+#dark-mode-toggle {
+  position: fixed;
+  bottom: 3rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  background: var(--accent-color);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(202, 48, 48, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#dark-mode-toggle:hover {
+  transform: scale(1.05);
+}
+
+#dark-mode-toggle i {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.dark-mode .read-more-button{
+  color: var(--white);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.3s ease-out;
+}
+
+.modal-content.active {
+  opacity: 1;
+  transform: translateY(0);
 }

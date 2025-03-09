@@ -1,123 +1,90 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomas Tolo - FrontEnd-utvecklare</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/0cd5e0c12b.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://kit.fontawesome.com/0cd5e0c12b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <header>
-      <nav>
-        <input
-          type="checkbox"
-          id="hamburger-toggle"
-          class="hamburger-checkbox"
-        />
-        <label for="hamburger-toggle" class="hamburger-icon">
-          <i class="fas fa-bars"></i>
-        </label>
-        <ul class="nav-links">
-          <li><a href="index.html">Hem</a></li>
-          <li><a href="about.html">Om Mig</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <input type="checkbox" id="hamburger-toggle" class="hamburger-checkbox">
+            <label for="hamburger-toggle" class="hamburger-icon">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-links">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="about.html">Om Mig</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero-section">
-      <div class="hero-content">
-        <h1>Tomas Tolo</h1>
-        <p>
-          FrontEnd-utvecklare | Skapar vackra och funktionella webbupplevelser
-        </p>
-        <div class="cta-buttons">
-          <a href="CV (1).pdf" class="cta-button secondary">Ladda Ner CV</a>
-        </div>
-      </div>
+        <div class="hero-content">
+            <h1>Tomas Tolo</h1>
+            <p>FrontEnd-utvecklare | Skapar vackra och funktionella webbupplevelser</p>
+                <a class="cta-button" id="downloadBtn">Ladda Ner CV</a>
+            </div>
     </section>
 
+    <div id="cv-content" style="display: none;"></div>
+
     <section id="projects" class="projects-section">
-      <h2>Mina Projekt</h2>
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card">
-          <img
-            src="undraw_website-builder_smzl.svg"
-            alt="Login Page Project"
-            class="project-image"
-          />
-          <div class="project-content">
-            <h3>Login Sida</h3>
-            <p>Inloggningssida byggt med HTML, CSS och Javascript</p>
-            <a href="#login-modal" class="read-more-button">Visa mer</a>
-            <a
-              href="https://github.com/TomasTolo/log-in-uppgift"
-              class="project-link"
-              >Se Projekt</a
-            >
-          </div>
-        </article>
+        <h2>Mina Projekt</h2>
+        <div class="projects-grid">
+            <article class="project-card">
+                <img src="undraw_website-builder_smzl.svg" alt="Login Page Project" class="project-image">
+                <div class="project-content">
+                    <h3>Login Sida</h3>
+                    <p>Inloggningssida byggd med HTML, CSS och JavaScript</p>
+                    <a href="#login-modal" class="read-more-button">Visa mer</a>
+                    <a href="https://github.com/TomasTolo/log-in-uppgift" class="project-link">Se Projekt</a>
+                </div>
+            </article>
 
-        <div id="login-modal" class="modal">
-          <div class="modal-content">
-            <a href="#" class="close-modal">Stäng</a>
-            <h3>Login Sida</h3>
-            <p>
-              <strong>beskrivining</strong> <br />En inloggningssida bygd med
-              HMTL, CSS och JavaScript som inehåller login och signup med ren
-              still och animation vid bytte av login/signup
-            </p>
-            <p><strong>Teknologier:</strong> HTML, CSS, JavaScript</p>
-            <a
-              href="https://github.com/TomasTolo/log-in-uppgift"
-              class="modal-link"
-              >Se Projekt</a
-            >
-          </div>
+            <div id="login-modal" class="modal">
+                <div class="modal-content">
+                    <a href="#" class="close-modal">Stäng</a>
+                    <h3>Login Sida</h3>
+                    <p><strong>Beskrivning</strong><br>En inloggningssida med login/signup-funktionalitet</p>
+                    <p><strong>Teknologier:</strong> HTML, CSS, JavaScript</p>
+                    <a href="https://github.com/TomasTolo/log-in-uppgift" class="modal-link">Se Projekt</a>
+                </div>
+            </div>
+
+            <article class="project-card">
+                <img src="undraw_website-builder_smzl.svg" alt="Coming Soon Project" class="project-image">
+                <div class="project-content">
+                    <h3>Kommer Snart...</h3>
+                    <p>Håll utkik efter mitt nästa projekt!</p>
+                </div>
+                <a href="#" class="project-link">Kommer Snart</a>
+            </article>
         </div>
-
-        <!-- Project 2 Empty -->
-        <article class="project-card">
-          <img
-            src="undraw_website-builder_smzl.svg"
-            alt="Coming Soon Project"
-            class="project-image"
-          />
-
-          <div class="project-content">
-            <h3>Kommer Snart...</h3>
-            <p>
-              Håll utkik efter mitt nästa projekt! Jag jobbar ständigt på nya
-              idéer och lösningar.
-            </p>
-          </div>
-          <a href="#" class="project-link">Kommer Snart</a>
-        </article>
-      </div>
     </section>
 
     <footer>
-      <div class="social-links">
-        <a href="tolotomas04@outlook.com" target="_blank">
-          <i class="fas fa-envelope"></i>
-          <span>E-post</span>
-        </a>
-        <a href="https://github.com/TomasTolo" target="_blank">
-          <i class="fab fa-github"></i>
-          <span>GitHub</span>
-        </a>
-      </div>
+        <div class="social-links">
+            <a href="mailto:tolotomas04@outlook.com" target="_blank">
+                <i class="fas fa-envelope"></i>
+                <span>E-post</span>
+            </a>
+            <a href="https://github.com/TomasTolo" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
     </footer>
-  </body>
+
+    
+    <script src="script.js"></script>
+</body>
 </html>
