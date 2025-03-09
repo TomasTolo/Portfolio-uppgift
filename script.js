@@ -1,5 +1,5 @@
- 
-ocument.addEventListener('DOMContentLoaded', async () => {
+
+document.addEventListener('DOMContentLoaded', async () => {
     try {
       const cvContainer = document.getElementById('cv-content');
       const { namn, email, utbildningar, arbetsplatser } = await (await fetch('cv.json')).json();
